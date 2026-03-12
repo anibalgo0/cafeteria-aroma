@@ -86,10 +86,11 @@ font-size:15px;
 
 /*ESTILO INICIO*/
 .inicio{
-
 height:90vh;
 
 display:flex;
+flex-direction:column; /* AGREGA SOLO ESTA LINEA */
+
 justify-content:center;
 align-items:center;
 
@@ -98,11 +99,14 @@ color:white;
 
 position:relative;
 overflow:hidden;
+}
 
+.contenido-inicio{
+text-align:center;
+margin:auto;
 }
 
 /* imagen fondo */
-
 .inicio::before{
 
 content:"";
@@ -155,36 +159,26 @@ font-size:1.2rem;
 margin-bottom:25px;
 }
 
-/* BOTON EVENTO */
-/* BOTON INICIO */
-
+/* BOTON VER EVENTO */
 .btn-inicio{
 
-background:#6f4e37;
+background: linear-gradient(45deg,#4b2e2e,#4f4646);
 padding:12px 25px;
-
 border-radius:8px;
-
 color:white;
 text-decoration:none;
 font-weight:bold;
-
-/* sombra */
-
-box-shadow:0 6px 15px rgba(0,0,0,0.25);
-
+cursor:pointer;
 transition:0.3s;
+box-shadow: #000000cf 0px 4px 10px;
 
 }
 
 /* efecto al pasar el mouse */
-
 .btn-inicio:hover{
 
-background:#4b2e2e;
-
-transform:translateY(-4px) scale(1.07);
-
+background: linear-gradient(45deg,#4b2e2e,#4f4646,#4b2e2e);
+transform:scale(1.05);
 box-shadow:0 12px 25px rgba(0,0,0,0.4);
 
 }
@@ -193,10 +187,25 @@ box-shadow:0 12px 25px rgba(0,0,0,0.4);
 .btn-inicio:active{
 
 transform:scale(0.92);
-
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+box-shadow: #000000cf 0px 2px 5px;
 
 }
+
+/* Optimización fondo animado en móviles */
+@media (max-width:768px){
+    .inicio::before{
+        animation: zoomFondo 30s infinite alternate; /* más lento para que no consuma tanto */
+    }
+    .foto img,
+    .evento-img{
+        transition: transform 0.3s ease; /* transiciones más suaves y rápidas */
+    }
+    .btn-inicio, .btn-evento, .whatsapp, .info-box{
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+}
+
+
 /* animacion fondo */
 
 @keyframes zoomFondo{
@@ -352,10 +361,22 @@ margin-bottom:25px;
 margin:6px 0;
 }
 
-/*BOTON RESERVAR*/
+/* MODO OSCURO EVENTO */
+body.modo-oscuro .evento-container{
+    background:#2e1f1f; /* fondo oscuro para el contenedor */
+    box-shadow:0 10px 30px rgba(255,255,255,0.1);
+}
 
+body.modo-oscuro .evento-info h3,
+body.modo-oscuro .evento-descripcion,
+body.modo-oscuro .evento-datos p{
+    color:white; /* letras visibles */
+}
+
+/*BOTON RESERVAR*/
 .btn-evento{
-background:#6f4e37;
+background: linear-gradient(45deg,#4b2e2e,#4f4646);
+box-shadow: #000000cf 0px 4px 10px;
 color:white;
 border:none;
 padding:12px 25px;
@@ -366,7 +387,7 @@ transition:0.3s;
 }
 
 .btn-evento:hover{
-background:#4b2e2e;
+background: linear-gradient(45deg,#4b2e2e,#4f4646,#4b2e2e);
 transform:scale(1.05);
 }
 
@@ -384,7 +405,7 @@ height:250px;
 
 /*BODY FINAL*/
 footer{
-background:#222;
+background:#000000;
 color:white;
 
 display:flex;
@@ -464,17 +485,21 @@ font-size:30px;
 
 .whatsapp{
 display:inline-block;
-background:#25D366;
+background: linear-gradient(45deg,#25d366,#00a884);
+box-shadow: #37ae55cf 0px 4px 10px;
 color:white;
 padding:12px 20px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
 width:max-content;
+cursor:pointer;
+transform: 0.3s;
 }
 
 .whatsapp:hover{
-background:#1ebe5d;
+background: linear-gradient(45deg,#00a884,#25d366,#00a884);
+transform:scale(1.05);
 }
 
 .contacto-mapa iframe{
@@ -506,7 +531,7 @@ right:25px;
 width:60px;
 height:60px;
 
-background:#25D366;
+background:#00000000;
 border-radius:50%;
 
 display:flex;
@@ -520,4 +545,29 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 
 .whatsapp-float:active{
 transform:scale(0.85);
+}
+
+/* MODO OSCURO */
+body.modo-oscuro {
+    background-color:#121212;
+    color:white;
+}
+
+body.modo-oscuro header{
+    background:#2e1f1f;
+}
+
+body.modo-oscuro nav a{
+    color:white;
+    box-shadow:0 4px 10px rgba(255,255,255,0.2);
+}
+
+body.modo-oscuro nav a:hover{
+    color:#ffd700;
+}
+
+body.modo-oscuro .info-box{
+    background:#3e2723;
+    color:white;
+    box-shadow:0 6px 15px rgba(255,255,255,0.2);
 }
