@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cafetería Aroma</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+
+<h1>Cafetería Aromas</h1>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#galeria">Galería</a>
+<a href="#evento">Evento</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+</header>
+
+<!--INICIO-->
+<section id="inicio" class="inicio">
+
+<div class="contenido-inicio">
+
+<h2>El mejor café de la ciudad ☕</h2>
+
+<p>Disfruta un momento especial con aroma, sabor y buena compañía.</p>
+
+<a href="#" class="btn-inicio" onclick="mostrarEvento()">Ver evento</a>
+
+</div>
+
+</section>
+
+<!--GALERIA-->
+<section id="galeria" class="oculto">
+
+<h2 class="titulo-galeria">Nuestra Galería</h2>
+
+<div class="galeria-container">
+
+<div class="foto">
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+<div class="overlay">Momentos Especiales</div>
+</div>
+
+<div class="foto">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+<div class="overlay">Amigos y Café</div>
+</div>
+
+<div class="foto">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<div class="overlay">Café Artesanal</div>
+</div>
+
+<div class="foto">
+<img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
+<div class="overlay">Ambiente Acogedor</div>
+</div>
+
+</div>
+
+</section>
+
+<!--EVENTO-->
+<section id="evento" class="oculto">
+
+<h2 class="titulo-evento">Evento Especial</h2>
+
+<div class="evento-container">
+
+<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7" class="evento-img">
+
+<div class="evento-info">
+
+<h3>Noche de Café y Música</h3>
+
+<p class="evento-descripcion">
+Disfruta una noche especial con café artesanal, música en vivo y un ambiente perfecto para compartir.
+</p>
+
+<div class="evento-datos">
+
+<p>📍 Cafetería Aroma</p>
+<p>📅 20 de Abril</p>
+<p>👥 50 invitados</p>
+
+</div>
+
+<button onclick="reservar()" class="btn-evento">
+Reservar mesa
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--CONTACTO-->
+<section id="contacto" class="oculto">
+
+<h2 class="titulo-contacto">Contáctanos</h2>
+
+<div class="contacto-grid">
+
+<div class="contacto-info">
+
+<div class="info-box">
+<span>📍</span>
+<div>
+<h3>Dirección</h3>
+<p>Los Ríos, Vinces</p>
+</div>
+</div>
+
+<div class="info-box">
+<span>✉</span>
+<div>
+<h3>Email</h3>
+<p>cafeteriaaroma@email.com</p>
+</div>
+</div>
+
+<a href="https://wa.me/593999999999" class="whatsapp">WhatsApp</a>
+
+</div>
+
+
+<div class="contacto-mapa">
+
+<iframe 
+src="https://www.google.com/maps?q=Vinces,Los%20Rios,Ecuador&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--Body Final-->
+<footer id="footer">
+
+<p>© 2026 </p>
+<p> Desarrollado por Cycoon Magnate EC</p>
+
+</footer>
+
+<a href="https://wa.me/593999999999" class="whatsapp-float" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>
